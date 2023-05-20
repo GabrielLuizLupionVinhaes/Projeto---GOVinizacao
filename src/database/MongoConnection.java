@@ -29,7 +29,7 @@ public class MongoConnection {
                 // Send a ping to confirm a successful connection
                 MongoDatabase database = mongoClient.getDatabase("admin");
                 database.runCommand(new Document("ping", 1));
-                System.out.println("Pinged your deployment. You successfully connected to MongoDB!");
+                System.out.println("Pinged your deployment. Voce esta conectado ao MongoDB!");
             } catch (MongoException e) {
                 e.printStackTrace();
             }

@@ -5,6 +5,11 @@
  */
 package com.fravel.govinizacao;
 
+import com.fravel.govinizacao.db.MongoDBUtil;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import org.bson.Document;
+
 /**
  *
  * @author ADM
@@ -198,7 +203,14 @@ public class CadUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
+        MongoDBUtil.connect();
+        MongoDatabase database = MongoDBUtil.getDatabase();
+        Document document = new Document();
+        document.append("agendamento", evt.getActionCommand());
+        MongoCollection<Document> collection = database.getCollection("govinizacao");
+        collection.insertOne(document);
+        
+        MongoDBUtil.close();
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void mnUsuarioAbrir_CadUsuario(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnUsuarioAbrir_CadUsuario

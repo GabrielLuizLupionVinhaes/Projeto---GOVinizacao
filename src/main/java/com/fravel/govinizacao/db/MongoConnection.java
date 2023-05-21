@@ -1,4 +1,4 @@
-package com.fravel.govinizacao.src.db;
+package com.fravel.govinizacao.db;
 
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;

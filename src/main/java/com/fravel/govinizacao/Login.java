@@ -107,22 +107,23 @@ public class Login extends javax.swing.JFrame {
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
         
         MongoDBUtil.connect();
-     
+
         String login = txtLogin.getText();
+        String senha = new String(txtSenha.getPassword());
+
         int verificaLogin = MongoDBUtil.query("nome", login, "usuario");
-        
-        JPasswordField  PassFiel = new JPasswordField ();
-        char[] aux = PassFiel.getPassword();
-        String senha = new String(aux);
-        int verificaSenha = MongoDBUtil.query("senha", senha, "usuario");
-        
-        if(verificaLogin == 1 && verificaSenha == 1){
+        int verificaSenha = MongoDBUtil.query("Senha", senha, "usuario");
+
+        if (verificaLogin == 1 && verificaSenha == 1) {
             Home home = new Home();
             home.setVisible(true);
             Login.this.dispose();
-        }else{
-            JOptionPane.showMessageDialog(null,"Dados incorretos, tente novamente!");
+        } else {
+            JOptionPane.showMessageDialog(null, "Dados incorretos, tente novamente!");
         }
+
+        MongoDBUtil.close();
+        
         
     }//GEN-LAST:event_btnEntrarActionPerformed
 

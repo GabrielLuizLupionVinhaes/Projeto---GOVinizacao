@@ -1,13 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.fravel.govinizacao.db;
 
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import lombok.extern.slf4j.Slf4j;
+import org.bson.Document;
 
 public class MongoDBUtil {
     private static MongoClient mongoClient;
@@ -19,6 +17,19 @@ public class MongoDBUtil {
         mongoClient = MongoClients.create(CONNECTION);
         database = mongoClient.getDatabase("govinizacao");
         System.out.println("Conectado ao banco GOVINIZACAO");
+    }
+    
+    public static int query(String campo, String text, String tabela){
+        MongoCollection<Document> collection = database.getCollection(tabela);
+        Document query = new Document(campo, text);
+        long count = collection.countDocuments(query);
+        
+        if(count > 0){
+            return 1;
+        }else{
+            return 0;
+        }
+        
     }
     
     public static MongoDatabase getDatabase(){

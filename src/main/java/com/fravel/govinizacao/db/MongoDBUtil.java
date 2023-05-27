@@ -9,7 +9,6 @@ import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoDatabase;
 import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 public class MongoDBUtil {
     private static MongoClient mongoClient;
     private static MongoDatabase database;

@@ -34,6 +34,7 @@ public class MongoDBUtil {
     
     public static void insert(String tabela, Document document){
         MongoCollection<Document> collection = database.getCollection(tabela);
+
         collection.insertOne(document);
     }
     

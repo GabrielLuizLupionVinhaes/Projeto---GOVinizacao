@@ -31,8 +31,6 @@ public class CadVeiculo extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        txtTipo = new javax.swing.JTextField();
-        txtGrupo = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         txtMarca = new javax.swing.JTextField();
@@ -42,6 +40,8 @@ public class CadVeiculo extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         txtPlaca = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
+        cbxTipo = new javax.swing.JComboBox<>();
+        cbxCategoria = new javax.swing.JComboBox<>();
         jMenuBar1 = new javax.swing.JMenuBar();
         mnCad = new javax.swing.JMenu();
         mnUsuario = new javax.swing.JMenuItem();
@@ -73,23 +73,9 @@ public class CadVeiculo extends javax.swing.JFrame {
             }
         });
 
-        txtTipo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        txtTipo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTipoActionPerformed(evt);
-            }
-        });
-
-        txtGrupo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        txtGrupo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtGrupoActionPerformed(evt);
-            }
-        });
-
         jLabel1.setText("Tipo de Veiculo:");
 
-        jLabel4.setText("Grupo Atribuido:");
+        jLabel4.setText("Categoria CNH");
 
         txtMarca.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txtMarca.addActionListener(new java.awt.event.ActionListener() {
@@ -119,6 +105,15 @@ public class CadVeiculo extends javax.swing.JFrame {
         });
 
         jLabel6.setText("Ano:");
+
+        cbxTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "LEVE", "PESADO", "MANUSEIO", "CONSTRUCAO", " " }));
+        cbxTipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxTipoActionPerformed(evt);
+            }
+        });
+
+        cbxCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D", "E", " " }));
 
         mnCad.setText("Cadastro");
 
@@ -168,7 +163,7 @@ public class CadVeiculo extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel7)
                             .addComponent(txtChassi, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
@@ -184,15 +179,19 @@ public class CadVeiculo extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(txtAno, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel5))
-                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel1)
+                                            .addComponent(jLabel5))
+                                        .addGap(93, 93, 93))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(cbxTipo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGap(18, 18, 18)))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel6)
                                     .addComponent(jLabel4)
-                                    .addComponent(txtGrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(cbxCategoria, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(127, 127, 127)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -218,8 +217,8 @@ public class CadVeiculo extends javax.swing.JFrame {
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtGrupo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbxTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbxCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -243,14 +242,6 @@ public class CadVeiculo extends javax.swing.JFrame {
     private void txtModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtModeloActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtModeloActionPerformed
-
-    private void txtTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTipoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTipoActionPerformed
-
-    private void txtGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtGrupoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtGrupoActionPerformed
 
     private void txtMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMarcaActionPerformed
         // TODO add your handling code here:
@@ -285,8 +276,8 @@ public class CadVeiculo extends javax.swing.JFrame {
         
         String modelo = txtModelo.getText();
         String placa = txtPlaca.getText();
-        String tipo = txtTipo.getText();
-        String grupo = txtGrupo.getText();
+        String tipo = (String) cbxTipo.getSelectedItem();
+        String categoria = (String) cbxCategoria.getSelectedItem();
         String marca = txtMarca.getText();
         String ano = txtAno.getText();
         String chassi = txtChassi.getText();
@@ -295,7 +286,7 @@ public class CadVeiculo extends javax.swing.JFrame {
         documento.append("marca", modelo);
         documento.append("placa", placa);
         documento.append("tipodeVeiculo", tipo);
-        documento.append("grupoAtribuido", grupo);
+        documento.append("categoriaCnh",categoria);
         documento.append("marca", marca);
         documento.append("anoModelo", ano);
         documento.append("chassi", chassi);
@@ -305,14 +296,18 @@ public class CadVeiculo extends javax.swing.JFrame {
 
         txtModelo.setText("");
         txtPlaca.setText("");
-        txtTipo.setText("");
-        txtGrupo.setText("");
+        cbxTipo.setSelectedItem("LEVE");
+        cbxCategoria.setSelectedItem("A");
         txtMarca.setText("");
         txtAno.setText("");
         txtChassi.setText("");
         
         MongoDBUtil.close();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void cbxTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxTipoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxTipoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -348,6 +343,8 @@ public class CadVeiculo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cbxCategoria;
+    private javax.swing.JComboBox<String> cbxTipo;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -368,10 +365,8 @@ public class CadVeiculo extends javax.swing.JFrame {
     private javax.swing.JMenuItem mnVeiculo;
     private javax.swing.JTextField txtAno;
     private javax.swing.JTextField txtChassi;
-    private javax.swing.JTextField txtGrupo;
     private javax.swing.JTextField txtMarca;
     private javax.swing.JTextField txtModelo;
     private javax.swing.JTextField txtPlaca;
-    private javax.swing.JTextField txtTipo;
     // End of variables declaration//GEN-END:variables
 }

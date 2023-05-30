@@ -40,8 +40,6 @@ public class Login extends javax.swing.JFrame {
 
         txtLogin.setToolTipText("");
 
-        txtSenha.setText("0000000");
-
         jLabel1.setText("Acesse");
 
         btnEntrar.setText("ENTRAR");

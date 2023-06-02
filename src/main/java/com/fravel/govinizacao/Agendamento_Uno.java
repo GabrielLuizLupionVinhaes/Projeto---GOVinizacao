@@ -156,9 +156,8 @@ public class Agendamento_Uno extends javax.swing.JFrame {
                         .addComponent(jLabel4))
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(jLabel9)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(txtDataLocacao, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(txtDataDevolucao, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)))
+                    .addComponent(txtDataLocacao)
+                    .addComponent(txtDataDevolucao))
                 .addGap(15, 15, 15))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(152, 152, 152)
@@ -179,9 +178,9 @@ public class Agendamento_Uno extends javax.swing.JFrame {
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel5)
                         .addComponent(lblCNH)))
@@ -281,7 +280,7 @@ public class Agendamento_Uno extends javax.swing.JFrame {
     private void btnBuscaNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaNomeActionPerformed
         MongoDBUtil.connect();
         
-        if(MongoDBUtil.queryUsuario("nome", txtNome.getText(), "Cpf").equals("")){
+        if(MongoDBUtil.queryUsuario("nome", txtNome.getText(), "nome").equals("")){
             JOptionPane.showMessageDialog(null,"Usuario não encontrado!");
 
         }else{
@@ -295,7 +294,7 @@ public class Agendamento_Uno extends javax.swing.JFrame {
     private void btnBuscaCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaCPFActionPerformed
         MongoDBUtil.connect();
                 
-        if(MongoDBUtil.queryUsuario("nome", txtNome.getText(), "nome").equals("")){
+        if(MongoDBUtil.queryUsuario("Cpf", txtCPF.getText(), "Cpf").equals("")){
             JOptionPane.showMessageDialog(null,"Usuario não encontrado!");
 
         }else{
@@ -312,11 +311,11 @@ public class Agendamento_Uno extends javax.swing.JFrame {
 
     private void btnAgendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgendarActionPerformed
        
-        if(txtNome.getText() != "" && txtCPF.getText() != "" && txtDataLocacao.getText() != "" && txtDataDevolucao.getText() != ""){
+        if(txtNome.getText() != "" || txtCPF.getText() != "" || txtDataLocacao.getText() != "" || txtDataDevolucao.getText() != ""){
             MongoDBUtil.connect();
             
             Document documento = new Document();
-            String idUsuario = MongoDBUtil.queryUsuario("Cpf", txtCPF.getText(), "CNH");
+            String idUsuario = MongoDBUtil.queryUsuario("Cpf", txtCPF.getText(), "id");
             String idVeiculo = MongoDBUtil.queryVeiculo("placa", "ABC-DEFG", "id");
             
             documento.append("usurario_id",idUsuario);

@@ -90,6 +90,11 @@ public class Agendamento_Compacto extends javax.swing.JFrame {
         jLabel3.setText("Local de retirada:");
 
         jButton1.setText("Consultar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Consultar");
 
@@ -123,13 +128,13 @@ public class Agendamento_Compacto extends javax.swing.JFrame {
                             .addComponent(jLabel3))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addComponent(jLabel1)
                             .addComponent(jTextField2))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel2)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addComponent(jTextField3))))
                 .addContainerGap(52, Short.MAX_VALUE))
         );
@@ -221,6 +226,12 @@ public class Agendamento_Compacto extends javax.swing.JFrame {
         cadVei.setVisible(true);
         Agendamento_Compacto.this.dispose();
     }//GEN-LAST:event_Abrir_CadVeiculo
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Agendamento_Uno agenda = new Agendamento_Uno();
+        agenda.setVisible(true);
+        Agendamento_Compacto.this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

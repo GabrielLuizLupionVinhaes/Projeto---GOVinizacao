@@ -34,8 +34,10 @@ public class CadUsuario extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        cbxClassificacao = new javax.swing.JComboBox<>();
+        cbxStatus = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        cbxCNH = new javax.swing.JComboBox<>();
         jMenuBar1 = new javax.swing.JMenuBar();
         mnCad = new javax.swing.JMenu();
         mnUsuario = new javax.swing.JMenuItem();
@@ -77,9 +79,13 @@ public class CadUsuario extends javax.swing.JFrame {
 
         jLabel3.setText("Classificação:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ADMIN", "MOTORISTA", "OPERADOR" }));
+        cbxClassificacao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ADMIN", "MOTORISTA", "OPERADOR" }));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ATIVO", "INATIVO", "BLOQUEADO" }));
+        cbxStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ATIVO", "INATIVO", "BLOQUEADO" }));
+
+        jLabel7.setText("Categoria CNH:");
+
+        cbxCNH.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D", "E" }));
 
         mnCad.setText("Cadastro");
 
@@ -134,20 +140,30 @@ public class CadUsuario extends javax.swing.JFrame {
                             .addComponent(txtConfSenha, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(1, 1, 1)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
-                                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(jLabel4)
-                                        .addGap(124, 124, 124))
-                                    .addComponent(txtCPF)
-                                    .addComponent(txtNome)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(txtCPF, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
+                                            .addComponent(txtNome)
+                                            .addComponent(jLabel2)
+                                            .addComponent(jLabel1)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel3)
+                                            .addComponent(cbxClassificacao, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel4)
+                                                .addGap(74, 74, 74)
+                                                .addComponent(jLabel7))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(cbxStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(cbxCNH, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                        .addGap(0, 10, Short.MAX_VALUE)))))
                         .addGap(37, 37, 37))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(1, 1, 1)
@@ -180,11 +196,13 @@ public class CadUsuario extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jLabel4))
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbxClassificacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbxStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbxCNH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10)
                 .addComponent(jLabel5)
                 .addGap(4, 4, 4)
@@ -234,25 +252,28 @@ public class CadUsuario extends javax.swing.JFrame {
         
         String nome = txtNome.getText();
         String cpf = txtCPF.getText();
-        String classificacao = txtClassificacao.getText();
-        String status = txtStatus.getText();
+        String classificacao = (String) cbxClassificacao.getSelectedItem();
+        String status = (String) cbxStatus.getSelectedItem();
+        String CNH = (String) cbxCNH.getSelectedItem();
         String senha = new String(txtSenha.getPassword());
         String confSenha = new String(txtConfSenha.getPassword());
 
         if(senha.equals(confSenha)){
             Document documento = new Document();
             documento.append("nome", nome);
-            documento.append("identificacao", cpf);
+            documento.append("Cpf", cpf);
             documento.append("classificacao", classificacao);
             documento.append("status", status);
+            documento.append("CNH", CNH);
             documento.append("senha", senha);
 
             MongoDBUtil.insert("usuario", documento);
             JOptionPane.showMessageDialog(null, "Usuario cadastrado com sucesso!!");
             txtNome.setText("");
             txtCPF.setText("");
-            txtClassificacao.setText("");
-            txtStatus.setText("");
+            cbxClassificacao.setSelectedItem("ADMIN");
+            cbxStatus.setSelectedItem("ATIVO");
+            cbxCNH.setSelectedItem("A");
             txtSenha.setText("");
             txtConfSenha.setText("");
         }else{
@@ -268,15 +289,17 @@ public class CadUsuario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cbxCNH;
+    private javax.swing.JComboBox<String> cbxClassificacao;
+    private javax.swing.JComboBox<String> cbxStatus;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;

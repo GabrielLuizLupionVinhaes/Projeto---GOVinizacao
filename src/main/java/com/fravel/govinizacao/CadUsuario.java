@@ -237,12 +237,14 @@ public class CadUsuario extends javax.swing.JFrame {
     private void Abrir_CadVeiculo(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Abrir_CadVeiculo
         CadVeiculo cadVei = new CadVeiculo();
         cadVei.setVisible(true);
+        cadVei.setLocationRelativeTo(null);
         CadUsuario.this.dispose();
     }//GEN-LAST:event_Abrir_CadVeiculo
 
     private void mnAgendamentoAgendar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnAgendamentoAgendar
         Agendamento_Grupo age = new Agendamento_Grupo();
         age.setVisible(true);
+        age.setLocationRelativeTo(null);
         CadUsuario.this.dispose();
     }//GEN-LAST:event_mnAgendamentoAgendar
 
@@ -261,7 +263,7 @@ public class CadUsuario extends javax.swing.JFrame {
         if(senha.equals(confSenha)){
             Document documento = new Document();
             documento.append("nome", nome);
-            documento.append("Cpf", cpf);
+            documento.append("cpf", cpf);
             documento.append("classificacao", classificacao);
             documento.append("status", status);
             documento.append("CNH", CNH);

@@ -125,7 +125,7 @@ public class MongoDBUtil {
             ObjectId getId = resultado.getObjectId("_id");
             String id = getId.toString();
             String nome = resultado.getString("nome");
-            String CPF = resultado.getString("Cpf");
+            String CPF = resultado.getString("cpf");
             String classificacao = resultado.getString("classificacao");
             String status = resultado.getString("status");
             String CNH = resultado.getString("CNH");
@@ -143,7 +143,7 @@ public class MongoDBUtil {
                     }else{
                         return nome;
                     }
-                case "Cpf":
+                case "cpf":
                     if(CPF.isEmpty()){
                         break;
                     }else{

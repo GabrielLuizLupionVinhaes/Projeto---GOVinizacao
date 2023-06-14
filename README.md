@@ -5,7 +5,7 @@ Projeto realizado para disciplina do Desafio Profissional III 2023
 
 3º. Semestre - Turma A – Noturno  
 
-            Grupo 02 
+Grupo 02 
 
 [Prototipagem ](http://example.net/)  Prototipagem das telas feitas no Figma.
 

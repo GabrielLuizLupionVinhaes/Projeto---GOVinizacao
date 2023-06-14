@@ -6,3 +6,4 @@ Projeto realizado para disciplina do Desafio Proficional 2023
 [Documentação do Trabalho](http://example.net/) has no title attribute.
 >teste
 * * *
+Use the `printf()` function.

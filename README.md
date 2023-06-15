@@ -11,7 +11,7 @@ Este repositório contém um trabalho acadêmico desenvolvido para a disciplina 
 ## Recursos
 
 * [Prototipagem](https://bit.ly/GOVinicao): Prototipagem das telas desenvolvidas no Figma.
-* [Documentação](http://example.net/): Documentos e outros recursos relacionados ao trabalho.
+* [Documentação](https://bit.ly/DocumentacaoGOV): Documentos e outros recursos relacionados ao trabalho.
 * [Download Rápido](http://example.net/): Download do Projeto Java.
 ## Descrição
 

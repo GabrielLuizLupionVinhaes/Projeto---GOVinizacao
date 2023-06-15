@@ -29,7 +29,7 @@ public class Login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         lblGOV.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        lblGOV.setText("GOVnização");
+        lblGOV.setText("GOVinização");
 
         txtLogin.setToolTipText("");
 

@@ -11,6 +11,8 @@ Este repositório contém um trabalho acadêmico desenvolvido para a disciplina 
 ## Recursos
 
 * [Prototipagem](https://bit.ly/GOVinicao): Prototipagem das telas desenvolvidas no Figma.
+* [Estrutura de dados I](https://bit.ly/ListaDuplaDP-III): Estrutura de dados feito em C, Lista Duplamente Encadeada.
+* [Estrutura de dados II](https://bit.ly/ListaSimplesDP-III): Estrutura de dados feito em C, Lista Simplesmente Encadeada.
 * [Documentação](https://bit.ly/DocumentacaoGOV): Documentos e outros recursos relacionados ao trabalho.
 * [Download Rápido](https://github.com/GabrielLuizLupionVinhaes/Projeto---GOVinizacao/archive/refs/heads/main.zip): Download do Projeto Java.
 ## Descrição
